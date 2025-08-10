@@ -69,217 +69,205 @@ void valhalla_actor_destroy(valhalla_actor_c* actor) {
 char* valhalla_actor_centroid(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->centroid(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->centroid(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_expansion(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->expansion(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->expansion(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_height(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->height(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->height(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_isochrone(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->isochrone(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->isochrone(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_locate(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->locate(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->locate(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_matrix(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->matrix(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->matrix(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_optimized_route(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->optimized_route(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->optimized_route(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_route(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->route(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->route(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_status(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->status(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->status(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_trace_attributes(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->trace_attributes(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->trace_attributes(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_trace_route(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->trace_route(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->trace_route(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 char* valhalla_actor_transit_available(valhalla_actor_c* actor, const char* request_json) {
   if (!actor || !request_json) return nullptr;
   valhalla::Api request;
+  std::string result;
   try {
-    std::string result = actor->actor->transit_available(request_json, nullptr, &request);
-    return string_to_c_string(result);
+    result = actor->actor->transit_available(request_json, nullptr, &request);
   } catch (const valhalla::valhalla_exception_t& ve) {
-    std::string error = valhalla::serialize_error(ve, request);
-    return string_to_c_string(error);
+    result = valhalla::serialize_error(ve, request);
   } catch (const std::exception& e) {
-    std::string error = serialize_error({599, std::string(e.what())}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string(e.what())}, request);
   } catch (...) {
-    std::string error = serialize_error({599, std::string("Unknown exception thrown")}, request);
-    return string_to_c_string(error);
+    result = serialize_error({599, std::string("Unknown exception thrown")}, request);
   }
+  actor->actor->cleanup();
+  return string_to_c_string(result);
 }
 
 } // extern "C"
